@@ -3,7 +3,7 @@
 <%@page import="Bean.*"%>
 <%@page import="Persistence.*"%>
 <%@page import="java.util.*" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>

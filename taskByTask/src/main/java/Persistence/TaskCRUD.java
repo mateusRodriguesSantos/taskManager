@@ -49,9 +49,11 @@ public class TaskCRUD {
     public ArrayList<Task> readAllTask() {
         Session session = FactorySession.getSessionFactory().openSession();
         Transaction tx = null;
+        ArrayList<Task> result = new ArrayList<Task>();
+
         try {
 
-            ArrayList<Task> result = new ArrayList<Task>();
+            
             tx = session.beginTransaction();
             List<?> tasks = session.createQuery("From Task").list();
 
@@ -67,16 +69,13 @@ public class TaskCRUD {
             if (tx != null)
                 tx.rollback();
             e.printStackTrace();
-            ArrayList<Task> result = new ArrayList<Task>();
-            return result;
+        
+            return null;
         } finally {
             session.close();
         }
 
-        // Create List
-        ArrayList<Task> list = new ArrayList<Task>();
-
-        return list;
+        return result;
     }
 
     /**
