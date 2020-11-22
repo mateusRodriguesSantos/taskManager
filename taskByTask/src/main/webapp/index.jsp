@@ -1,14 +1,16 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8"%>
+<%@page import="Bean.*"%>
+<%@page import="Persistence.*"%>
+<%@page import="java.util.*" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Task Manager</title>
-
-    <meta name="description" content="Source code generated using layoutit.com">
-    <meta name="author" content="LayoutIt!">
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
@@ -24,28 +26,42 @@
 			</h3>
 		</div>
 	</div>
+	
 	<div class="row">
 		<div class="col-md-4">
-			 
+
+		<%
+			//Lista de Tasks
+			ArrayList<Task> list = new ArrayList<Task>();
+			
+			TaskCRUD t = new TaskCRUD();
+			
+			list = t.readAllTask();
+			
+			for(Task object:list){
+				
+		%> 
 			<button type="button" class="btn btn-success btn-sm">
 				Adicionar
 			</button>
 			<h3 class="text-center">
 				Doing
 			</h3>
-			<div class="card">
-				<h5 class="card-header">
-					Titulo
-				</h5>
-				<div class="card-body">
-					<p class="card-text">
-						Descrição
-					</p>
+			<% if(object.getStatus().equals("Doing")){ %>
+				<div class="card">
+					<h5 class="card-header">
+						<%object.getTitulo();%>
+					</h5>
+					<div class="card-body">
+						<p class="card-text">
+							<%object.getDescricao();%>
+						</p>
+					</div>
+					<div class="card-footer">
+						<%object.getPrioridade();%>
+					</div>
 				</div>
-				<div class="card-footer">
-					Prioridade
-				</div>
-			</div>
+			<%}%>
 		</div>
 		<div class="col-md-4">
 			 
@@ -55,19 +71,21 @@
 			<h3 class="text-center">
 				To do
 			</h3>
-			<div class="card">
-				<h5 class="card-header">
-					Titulo
-				</h5>
-				<div class="card-body">
-					<p class="card-text">
-						Descrição
-					</p>
+			<% if(object.getStatus().equals("To Do")){ %>
+				<div class="card">
+					<h5 class="card-header">
+						<%object.getTitulo();%>
+					</h5>
+					<div class="card-body">
+						<p class="card-text">
+							<%object.getDescricao();%>
+						</p>
+					</div>
+					<div class="card-footer">
+						<%object.getPrioridade();%>
+					</div>
 				</div>
-				<div class="card-footer">
-					Prioridade
-				</div>
-			</div>
+			<% }%>
 		</div>
 		<div class="col-md-4">
 			 
@@ -77,20 +95,23 @@
 			<h3 class="text-center">
 				Done
 			</h3>
-			<div class="card">
-				<h5 class="card-header">
-					Titulo
-				</h5>
-				<div class="card-body">
-					<p class="card-text">
-						Descrição
-					</p>
+			<% if(object.getStatus().equals("Done")){ %>
+				<div class="card">
+					<h5 class="card-header">
+						<%object.getTitulo();%>
+					</h5>
+					<div class="card-body">
+						<p class="card-text">
+							<%object.getDescricao();%>
+						</p>
+					</div>
+					<div class="card-footer">
+						<%object.getPrioridade();%>
+					</div>
 				</div>
-				<div class="card-footer">
-					Prioridade
-				</div>
-			</div>
+			<%}%>
 		</div>
+		<%}%>
 	</div>
 </div>
 
