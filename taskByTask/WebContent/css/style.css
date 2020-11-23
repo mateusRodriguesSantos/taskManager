@@ -1,0 +1,13 @@
+/* Empty CSS file for your own CSS*/
+
+#Page{
+    display: inline;
+}
+
+#List{
+    display: list-item;
+}
+
+#Card{
+    width: 300px;
+}
