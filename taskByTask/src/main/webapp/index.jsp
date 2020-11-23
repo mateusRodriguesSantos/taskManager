@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
-<%@page import="Bean.*"%>
-<%@page import="Persistence.*"%>
-<%@page import="java.util.*" %>
+<%@page import="BO.TaskBO"%>
+<%@page import="Bean.Task"%>
+<%@page import="java.util.ArrayList" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -12,106 +12,107 @@
 
     <title>Task Manager</title>
 
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+   	<link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 
   </head>
   <body>
 
-    <div class="container-fluid">
-	<div class="row">
-		<div class="col-md-12">
-			<h3 class="text-center">
-				Task by Task
-			</h3>
+    <div id="Page" class="container-fluid">
+		<div class="row">
+			<div class="col-md-12">
+				<h3 class="text-center">
+					Task by Task
+				</h3>
+			</div>
 		</div>
-	</div>
-	
-	<div class="row">
-		<div class="col-md-4">
 
-		<%
-			//Lista de Tasks
-			ArrayList<Task> list = new ArrayList<Task>();
-			
-			TaskCRUD t = new TaskCRUD();
-			
-			list = t.readAllTask();
-			
-			for(Task object:list){
+		<div id="List" class="row">
+			<div class="col-md-4">
+				<button type="button" class="btn btn-success btn-sm">
+					Adicionar
+				</button>
+				<h3 class="text-center">
+					Doing
+				</h3>
+				<%
+				//Lista de Tasks
+				ArrayList<Task> list = TaskBO.getAllTasks();
 				
-		%> 
-			<button type="button" class="btn btn-success btn-sm">
-				Adicionar
-			</button>
-			<h3 class="text-center">
-				Doing
-			</h3>
-			<% if(object.getStatus().equals("Doing")){ %>
-				<div class="card">
-					<h5 class="card-header">
-						<%object.getTitulo();%>
-					</h5>
-					<div class="card-body">
-						<p class="card-text">
-							<%object.getDescricao();%>
-						</p>
+				for(Task object:list){
+					
+				%> 
+				<% if(object.getStatus().equals("Doing")){ %>
+					<div id="Card"  class="card">
+						<h5 class="card-header">
+							<%=object.getTitulo()%>
+						</h5>
+						<div class="card-body">
+							<p class="card-text">
+								<%=object.getPrioridade()%>
+							</p>
+						</div>
+						<div class="card-footer">
+							<%=object.getDescricao()%>
+						</div>
 					</div>
-					<div class="card-footer">
-						<%object.getPrioridade();%>
-					</div>
-				</div>
+				<%}%>
+			</div>
 			<%}%>
 		</div>
-		<div class="col-md-4">
-			 
-			<button type="button" class="btn btn-success btn-sm">
-				Adicionar
-			</button>
-			<h3 class="text-center">
-				To do
-			</h3>
-			<% if(object.getStatus().equals("To Do")){ %>
-				<div class="card">
-					<h5 class="card-header">
-						<%object.getTitulo();%>
-					</h5>
-					<div class="card-body">
-						<p class="card-text">
-							<%object.getDescricao();%>
-						</p>
+
+		<div id="List" class="row">
+			<div class="col-md-4">
+				<button type="button" class="btn btn-success btn-sm">
+					Adicionar
+				</button>
+				<h3 class="text-center">
+					To Do
+				</h3>
+			
+					<div id="Card"  class="card">
+						<h5 class="card-header">
+							dfdfdf
+						</h5>
+						<div class="card-body">
+							<p class="card-text">
+								sfdfdf
+							</p>
+						</div>
+						<div class="card-footer">
+							dfdf
+						</div>
 					</div>
-					<div class="card-footer">
-						<%object.getPrioridade();%>
-					</div>
-				</div>
-			<% }%>
+				
+			</div>
+			
 		</div>
-		<div class="col-md-4">
-			 
-			<button type="button" class="btn btn-success btn-sm">
-				Adicionar
-			</button>
-			<h3 class="text-center">
-				Done
-			</h3>
-			<% if(object.getStatus().equals("Done")){ %>
-				<div class="card">
-					<h5 class="card-header">
-						<%object.getTitulo();%>
-					</h5>
-					<div class="card-body">
-						<p class="card-text">
-							<%object.getDescricao();%>
-						</p>
+
+		<div id="List" class="row">
+			<div class="col-md-4">
+				<button type="button" class="btn btn-success btn-sm">
+					Adicionar
+				</button>
+				<h3 class="text-center">
+					Done
+				</h3>
+		
+					<div id="Card"  class="card">
+						<h5 class="card-header">
+							sdskfsm
+						</h5>
+						<div class="card-body">
+							<p class="card-text">
+								fdfdf
+							</p>
+						</div>
+						<div class="card-footer">
+							dfdf
+						</div>
 					</div>
-					<div class="card-footer">
-						<%object.getPrioridade();%>
-					</div>
-				</div>
-			<%}%>
-		</div>
-		<%}%>
+				
+			</div>
+			
 	</div>
 </div>
 

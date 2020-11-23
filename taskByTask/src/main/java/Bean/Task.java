@@ -2,14 +2,6 @@ package Bean;
 
 import java.util.Date;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-
 /**
  * Bean of Task
  *
@@ -18,12 +10,12 @@ import javax.persistence.TemporalType;
  * @since 2020-11-21
  */
 
-@Entity
-@Table(name = "Task")
+//@Entity
+//@Table(name = "Task")
 public class Task {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+   // @Id
+   // @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idTask;
     private String titulo;
     private String status;
@@ -31,7 +23,7 @@ public class Task {
     private int prioridade;
     private String descricao;
 
-    @Temporal(TemporalType.DATE)
+    //@Temporal(TemporalType.DATE)
     private Date limite;
 
     public Task(){
