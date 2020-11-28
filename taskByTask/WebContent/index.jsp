@@ -16,35 +16,29 @@
 
   </head>
   <body>
-
-    <div id="Page" class="container-fluid">
-		<div class="row">
-			<div class="col-md-12">
-				<h3 class="text-center">
-					Task by Task
-				</h3>
-			</div>
+	<div id="Titulo" class="row">
+		<div class="col-md-12">
+			<h3 class="text-center">
+				Task by Task
+			</h3>
 		</div>
-
-		<div id="List" class="row">
-			<div class="col-md-4">
-				<button type="button" class="btn btn-success btn-sm">
-					Adicionar
-				</button>
-				<h3 class="text-center">
-					Doing
-				</h3>
+	</div>
+	
+    <div  class="container-fluid ">
+  	  <div class="row">
+		<div class="col-4">
+			<h1 style="text-align:center">To Do</h1>
 				<%
 				//Lista de Tasks
 				
-				TaskBO tBO = new TaskBO();
+				TaskBO tBO1 = new TaskBO();
 				
-				ArrayList<Task> list = tBO.getAllTasks();
-				for(Task object:list){
+				ArrayList<Task> list1 = tBO1.getAllTasks();
+				for(Task object:list1){
 					
 				%> 
-				<% if(object.getStatus().equals("Doing")){ %>
-					<div id="Card"  class="card">
+				<% if(object.getStatus().equals("ToDo")){ %>
+					<div  class="card mt-3">
 						<h5 class="card-header">
 							<%=object.getTitulo()%>
 						</h5>
@@ -58,62 +52,69 @@
 						</div>
 					</div>
 				<%}%>
-			</div>
-			<%}%>
+				<%}%>
 		</div>
+	
 
-		<div id="List" class="row">
-			<div class="col-md-4">
-				<button type="button" class="btn btn-success btn-sm">
-					Adicionar
-				</button>
-				<h3 class="text-center">
-					To Do
-				</h3>
-			
-					<div id="Card"  class="card">
+		<div class="col-4">
+		<h1 style="text-align:center">Doing</h1>
+				<%
+				//Lista de Tasks
+				
+				TaskBO tBO2 = new TaskBO();
+				
+				ArrayList<Task> list2 = tBO2.getAllTasks();
+				for(Task object:list2){
+					
+				%> 
+				<% if(object.getStatus().equals("Doing")){ %>
+					<div class="card mt-3">
 						<h5 class="card-header">
-							dfdfdf
+							<%=object.getTitulo()%>
 						</h5>
 						<div class="card-body">
 							<p class="card-text">
-								sfdfdf
+								<%=object.getPrioridade()%>
 							</p>
 						</div>
 						<div class="card-footer">
-							dfdf
+							<%=object.getDescricao()%>
 						</div>
 					</div>
-				
-			</div>
-			
+				<%}%>
+				<%}%>
 		</div>
-
-		<div id="List" class="row">
-			<div class="col-md-4">
-				<button type="button" class="btn btn-success btn-sm">
-					Adicionar
-				</button>
-				<h3 class="text-center">
-					Done
-				</h3>
 		
-					<div id="Card"  class="card">
+		
+		
+		<div class="col-4">
+		<h1 style="text-align:center">Done</h1>
+				<%
+				//Lista de Tasks
+				
+				TaskBO tBO3 = new TaskBO();
+				
+				ArrayList<Task> list3 = tBO3.getAllTasks();
+				for(Task object:list3){
+					
+				%> 
+				<% if(object.getStatus().equals("Done")){ %>
+					<div class="card mt-3">
 						<h5 class="card-header">
-							sdskfsm
+							<%=object.getTitulo()%>
 						</h5>
 						<div class="card-body">
 							<p class="card-text">
-								fdfdf
+								<%=object.getPrioridade()%>
 							</p>
 						</div>
 						<div class="card-footer">
-							dfdf
+							<%=object.getDescricao()%>
 						</div>
 					</div>
-				
-			</div>
-			
+				<%}%>
+				<%}%>
+		</div>
 	</div>
 </div>
 
