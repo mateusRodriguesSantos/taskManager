@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@page import="BO.TaskBO"%>
 <%@page import="Bean.Task"%>
 <%@page import="java.util.ArrayList" %>
@@ -15,7 +15,8 @@
     <link href="css/style.css" rel="stylesheet">
 
   </head>
-  <body>
+  <body style="background-color: aliceblue;">
+  
 	<div id="Titulo" class="row">
 		<div class="col-md-12">
 			<h3 class="text-center">
@@ -24,10 +25,19 @@
 		</div>
 	</div>
 	
-    <div  class="container-fluid ">
+    <div class="container-fluid ">
   	  <div class="row">
 		<div class="col-4">
 			<h1 style="text-align:center">To Do</h1>
+			
+			<div class="form-group">
+				<form action="/ServletManagerTask" method="get">
+					<div class="form-control">
+						<input type="hidden" value="addToDo" id="action"></input>
+						<input type="submit" value="Adicionar" class="btn btn-outline-primary">
+					</div>
+				</form>
+			</div>
 				<%
 				//Lista de Tasks
 				
@@ -57,7 +67,15 @@
 	
 
 		<div class="col-4">
-		<h1 style="text-align:center">Doing</h1>
+			<h1 style="text-align:center">Doing</h1>
+			<div class="form-group">
+				<form action="/ServletManagerTask" method="get">
+					<div class="form-control">
+						<input type="hidden" value="addDoing" id="action"></input>
+						<input type="submit" value="Adicionar" class="btn btn-outline-primary">
+					</div>
+				</form>
+			</div>
 				<%
 				//Lista de Tasks
 				
@@ -88,7 +106,15 @@
 		
 		
 		<div class="col-4">
-		<h1 style="text-align:center">Done</h1>
+			<h1 style="text-align:center">Done</h1>
+			<div class="form-group">
+				<form action="/ServletManagerTask" method="get">
+					<div class="form-control">
+						<input type="hidden" value="addDone" id="action"></input>
+						<input type="submit" value="Adicionar" class="btn btn-outline-primary">
+					</div>
+				</form>
+			</div>
 				<%
 				//Lista de Tasks
 				

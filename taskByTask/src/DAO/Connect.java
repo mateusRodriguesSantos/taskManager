@@ -32,14 +32,14 @@ public class Connect {
         Connection connection = null; // atributo do tipo Connection
 
         try {
-
-            // Carregando o JDBC Driver padrão
-
+        	
+            // Carregando o JDBC Driver padrï¿½o
+        
             String driverName = "com.mysql.jdbc.Driver";
 
             Class.forName(driverName);
 
-            // Configurando a nossa conexão com um banco de dados//
+            // Configurando a nossa conexï¿½o com um banco de dados//
 
             String serverName = "localhost"; // caminho do servidor do BD
 
@@ -47,13 +47,13 @@ public class Connect {
 
             String url = "jdbc:mysql://" + serverName + "/" + mydatabase;
 
-            String username = "root"; // nome de um usuário de seu BD
+            String username = "root"; // nome de um usuï¿½rio de seu BD
 
             String password = "12345678"; // sua senha de acesso
 
             connection = DriverManager.getConnection(url, username, password);
 
-            // Testa sua conexão//
+            // Testa sua conexï¿½o//
 
             if (connection != null) {
 
@@ -66,7 +66,7 @@ public class Connect {
             }
             return connection;
 
-        } catch (ClassNotFoundException e) { // Driver não encontrado
+        } catch (ClassNotFoundException e) { // Driver nï¿½o encontrado
 
             System.out.println("O driver expecificado nao foi encontrado.");
 
@@ -74,7 +74,7 @@ public class Connect {
 
         } catch (SQLException e) {
 
-            // Não conseguindo se conectar ao banco
+            // Nï¿½o conseguindo se conectar ao banco
 
             System.out.println("Nao foi possivel conectar ao Banco de Dados.");
 
