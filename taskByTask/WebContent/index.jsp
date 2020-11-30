@@ -31,9 +31,9 @@
 			<h1 style="text-align:center">To Do</h1>
 			
 			<div class="form-group">
-				<form action="/ServletManagerTask" method="get">
+				<form action="ManagerTask" method="get">
 					<div class="form-control">
-						<input type="hidden" value="addToDo" id="action"></input>
+						<input type="hidden" value="addToDo" name="action" id="action"></input>
 						<input type="submit" value="Adicionar" class="btn btn-outline-primary">
 					</div>
 				</form>
@@ -69,9 +69,9 @@
 		<div class="col-4">
 			<h1 style="text-align:center">Doing</h1>
 			<div class="form-group">
-				<form action="/ServletManagerTask" method="get">
+				<form action="ManagerTask" method="get">
 					<div class="form-control">
-						<input type="hidden" value="addDoing" id="action"></input>
+						<input type="hidden" value="addDoing" name="action" id="action"></input>
 						<input type="submit" value="Adicionar" class="btn btn-outline-primary">
 					</div>
 				</form>
@@ -108,9 +108,9 @@
 		<div class="col-4">
 			<h1 style="text-align:center">Done</h1>
 			<div class="form-group">
-				<form action="/ServletManagerTask" method="get">
+				<form action="ManagerTask" method="get">
 					<div class="form-control">
-						<input type="hidden" value="addDone" id="action"></input>
+						<input type="hidden" value="addDone" name="action" id="action"></input>
 						<input type="submit" value="Adicionar" class="btn btn-outline-primary">
 					</div>
 				</form>

@@ -9,12 +9,16 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  
+  <!--  
   <servlet>
-        <servlet-name>ServletManagerTask</servlet-name>
-        <servlet-class>src.Controller.ServletManagerTask</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>ServletManagerTask</servlet-name>
-        <url-pattern>/ServletManagerTask</url-pattern>
-    </servlet-mapping>
+	<servlet-name>ManagerServlet</servlet-name>
+	<servlet-class>Controller.ManagerServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>ManagerServlet</servlet-name>
+		<url-pattern>/taskManager</url-pattern>
+	</servlet-mapping>
+	-->
 </web-app>
