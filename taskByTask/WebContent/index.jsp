@@ -15,7 +15,7 @@
     <link href="css/style.css" rel="stylesheet">
 
   </head>
-  <body style="background-color: aliceblue;">
+  <body>
   
 	<div id="Titulo" class="row">
 		<div class="col-md-12">
@@ -24,20 +24,26 @@
 			</h3>
 		</div>
 	</div>
-	
+	<div class="container-fluid">
+      <div class="row">
+      	<div class="col-6">
+	      <a href="/taskByTask"><img alt="share" src="images/home48.png"/></a>
+      	</div>
+      	<div class="col-6">
+      		<div class="col-3" style="float: right;">
+      			 <a style="float: right;"><img alt="share" src="images/share48.png"/></a>
+      		</div>
+      	</div>
+      </div>
+    </div>
     <div class="container-fluid ">
   	  <div class="row">
 		<div class="col-4">
 			<h1 style="text-align:center">To Do</h1>
 			
-			<div class="form-group">
-				<form action="ManagerTask" method="get">
-					<div class="form-control">
-						<input type="hidden" value="addToDo" name="action" id="action"></input>
-						<input type="submit" value="Adicionar" class="btn btn-outline-primary">
-					</div>
-				</form>
-			</div>
+				<div class="row justify-content-center">
+					<a href="/taskByTask/ManagerTask?action=ToDo" class="btn btn-primary">Adicionar</a>
+				</div>
 				<%
 				//Lista de Tasks
 				
@@ -68,13 +74,8 @@
 
 		<div class="col-4">
 			<h1 style="text-align:center">Doing</h1>
-			<div class="form-group">
-				<form action="ManagerTask" method="get">
-					<div class="form-control">
-						<input type="hidden" value="addDoing" name="action" id="action"></input>
-						<input type="submit" value="Adicionar" class="btn btn-outline-primary">
-					</div>
-				</form>
+			<div class="row justify-content-center">
+				<a href="/taskByTask/ManagerTask?action=Doing" class="btn btn-primary">Adicionar</a>
 			</div>
 				<%
 				//Lista de Tasks
@@ -107,13 +108,8 @@
 		
 		<div class="col-4">
 			<h1 style="text-align:center">Done</h1>
-			<div class="form-group">
-				<form action="ManagerTask" method="get">
-					<div class="form-control">
-						<input type="hidden" value="addDone" name="action" id="action"></input>
-						<input type="submit" value="Adicionar" class="btn btn-outline-primary">
-					</div>
-				</form>
+			<div class="row justify-content-center">
+				<a href="/taskByTask/ManagerTask?action=Done" class="btn btn-primary">Adicionar</a>
 			</div>
 				<%
 				//Lista de Tasks

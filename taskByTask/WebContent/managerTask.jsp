@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -14,27 +15,34 @@
 
   </head>
     <body>
-    <div id="Titulo" class="row">
-      <div class="col-md-12">
-        <h3 class="text-center">
-          Task by Task
-        </h3>
+    <div class="container-fluid">
+      <div class="row">
+      	<div class="col-12">
+	      	<h3 class="text-center">
+	          Task by Task
+	        </h3>
+      	</div>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div class="row justify-content-center">
+	      <a href="/taskByTask" class="btn btn-primary">Voltar</a>
       </div>
     </div>
     <div class="row justify-content-center">
       <div class="col-6" style="background-color: aliceblue; border-radius: 10px;">
-        <form action="">
+        <form action="ManagerTask" method="post">
         <div class="form-group" >
             <label for="titulo">Titulo</label>
-            <input type="text" class="form-control" id="titulo" placeholder="Digite o titulo da Task">
+            <input type="text" class="form-control" name="titulo" id="titulo" placeholder="Digite o titulo da Task" required>
         </div>
         <div class="form-group" >
           <label for="descricao">Descrição</label>
-          <input type="text" class="form-control" id="descricao" placeholder="Digite a descrição da Task">
+          <input type="text" class="form-control" name="descricao" id="descricao" placeholder="Digite a descrição da Task" required>
         </div>
         <div class="form-group" >
           <label for="prioridade">Prioridade</label>
-          <select class="form-control" id="prioridade">
+          <select class="form-control" name="prioridade" id="prioridade">
             <option value="1">High</option>
             <option value="2">Medium</option>
             <option value="3">Small</option>
@@ -42,15 +50,12 @@
         </div>
         <div class="form-group" >
           <label for="status">Status</label>
-          <select class="form-control" id="status">
-            <option value="ToDo">To Do</option>
-            <option value="Doing">Doing</option>
-            <option value="Done">Done</option>
-          </select>
+     
+          <input class="form-control" value="${action}" name="status" id="status" readonly/>
         </div>
         <div class="form-group" >
           <label for="limite">Limite</label>
-          <input type="date" class="form-control" id="limite">
+          <input type="date" class="form-control" name="limite" id="limite" required>
         </div>
         <div class="row justify-content-center form-group">
           <input type="submit" value="Enviar" class="btn btn-primary">

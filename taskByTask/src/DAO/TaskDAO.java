@@ -46,7 +46,10 @@ public class TaskDAO {
         statement.setString(2, newTask.getStatus());
         statement.setString(3, "" + newTask.getPrioridade());
         statement.setString(4, newTask.getDescricao());
-        statement.setDate(5, (Date) newTask.getLimite());
+        
+        java.sql.Date sqlDate = new java.sql.Date(newTask.getLimite().getTime());
+        
+        statement.setDate(5, sqlDate);
 
         // Execute SQL
         int rowsInserted = statement.executeUpdate();

@@ -6,6 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Date;
 
 import org.junit.jupiter.api.Test;
 
@@ -14,13 +15,15 @@ import Bean.Task;
 class TestDAOTaskCRUD {
 
 	@Test
-	void testRead() throws SQLException {
-		TaskDAO tDAO = new TaskDAO();
+	void testInsert() throws SQLException {
+	
+		Task t = new Task("Fazer um crochê", "Done", 3, "Usar a agulha que o Isnard me deu", new Date());
 		
-		ArrayList<Task> list = tDAO.readTask();
+		TaskDAO tDao = new TaskDAO();
 		
+		Boolean result = tDao.insertTask(t);
 		
-		assertNotEquals(null, list);
+		assertEquals(true,result);
 	}
 
 }
