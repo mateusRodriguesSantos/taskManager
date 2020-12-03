@@ -59,6 +59,9 @@
 								</div>
 								<div class="col-6 ">
 									<div class="float-right">
+										<a href="/taskByTask/View?viewID=<%=object.getIdTask()%>">
+											<img alt="delete" src="images/eye32.png">
+										</a>
 										<a href="/taskByTask/Deletions?deleteID=<%=object.getIdTask()%>">
 											<img alt="delete" src="images/delete32.png">
 										</a>
@@ -67,9 +70,21 @@
 							</div>
 						</div>
 						<div class="card-body">
-							<p class="card-text">
-								<%=object.getPrioridade()%>
-							</p>
+							<%if(object.getPrioridade() == 1){%>
+								<p class="card-text" style="color:white; text-align:center; background-color: red;">
+									Hight
+								</p>
+							<%}%>
+							<%if(object.getPrioridade() == 2){%>
+								<p class="card-text" style="text-align:center; background-color: yellow;">
+									Medium
+								</p>
+							<%}%>
+							<%if(object.getPrioridade() == 3){%>
+								<p class="card-text" style="color:white; text-align:center; background-color: green;">
+									Small
+								</p>
+							<%}%>
 						</div>
 						<div class="card-footer">
 							<%=object.getDescricao()%>
@@ -103,6 +118,9 @@
 								</div>
 								<div class="col-6 ">
 									<div class="float-right">
+										<a href="/taskByTask/View?viewID=<%=object.getIdTask()%>">
+											<img alt="delete" src="images/eye32.png">
+										</a>
 										<a href="/taskByTask/Deletions?deleteID=<%=object.getIdTask()%>">
 											<img alt="delete" src="images/delete32.png">
 										</a>
@@ -111,9 +129,21 @@
 							</div>
 						</div>
 						<div class="card-body">
-							<p class="card-text">
-								<%=object.getPrioridade()%>
-							</p>
+								<%if(object.getPrioridade() == 1){%>
+								<p class="card-text" style="color:white; text-align:center; background-color: red;">
+									Hight
+								</p>
+							<%}%>
+							<%if(object.getPrioridade() == 2){%>
+								<p class="card-text" style="text-align:center; background-color: yellow;">
+									Medium
+								</p>
+							<%}%>
+							<%if(object.getPrioridade() == 3){%>
+								<p class="card-text" style="color:white; text-align:center; background-color: green;">
+									Small
+								</p>
+							<%}%>
 						</div>
 						<div class="card-footer">
 							<%=object.getDescricao()%>
@@ -148,6 +178,9 @@
 								</div>
 								<div class="col-6 ">
 									<div class="float-right">
+										<a href="/taskByTask/View?viewID=<%=object.getIdTask()%>">
+											<img alt="delete" src="images/eye32.png">
+										</a>
 										<a href="/taskByTask/Deletions?deleteID=<%=object.getIdTask()%>">
 											<img alt="delete" src="images/delete32.png">
 										</a>
@@ -156,9 +189,21 @@
 							</div>
 						</div>
 						<div class="card-body">
-							<p class="card-text">
-								<%=object.getPrioridade()%>
-							</p>
+							<%if(object.getPrioridade() == 1){%>
+								<p class="card-text" style="color:white; text-align:center; background-color: red;">
+									Hight
+								</p>
+							<%}%>
+							<%if(object.getPrioridade() == 2){%>
+								<p class="card-text" style="text-align:center; background-color: yellow;">
+									Medium
+								</p>
+							<%}%>
+							<%if(object.getPrioridade() == 3){%>
+								<p class="card-text" style="color:white; text-align:center; background-color: green;">
+									Small
+								</p>
+							<%}%>
 						</div>
 						<div class="card-footer">
 							<%=object.getDescricao()%>
