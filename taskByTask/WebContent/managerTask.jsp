@@ -29,7 +29,7 @@
 	      <a href="/taskByTask" class="btn btn-primary">Voltar</a>
       </div>
     </div>
-    <div class="row justify-content-center">
+    <div class="row justify-content-center mt-3">
       <div class="col-6" style="background-color: aliceblue; border-radius: 10px;">
         <form action="ManagerTask" method="post">
         <div class="form-group" >

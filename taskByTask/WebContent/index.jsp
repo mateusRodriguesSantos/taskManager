@@ -26,10 +26,7 @@
 	</div>
 	<div class="container-fluid">
       <div class="row">
-      	<div class="col-6">
-	      <a href="/taskByTask"><img alt="share" src="images/home48.png"/></a>
-      	</div>
-      	<div class="col-6">
+      	<div class="col">
       		<div class="col-3" style="float: right;">
       			 <a style="float: right;"><img alt="share" src="images/share48.png"/></a>
       		</div>
@@ -55,9 +52,20 @@
 				%> 
 				<% if(object.getStatus().equals("ToDo")){ %>
 					<div  class="card mt-3">
-						<h5 class="card-header">
-							<%=object.getTitulo()%>
-						</h5>
+						<div class="card-header">
+							<div class="row">
+								<div class="col-6">
+									<h5><%=object.getTitulo()%></h5>
+								</div>
+								<div class="col-6 ">
+									<div class="float-right">
+										<a href="/taskByTask/Deletions?deleteID=<%=object.getIdTask()%>">
+											<img alt="delete" src="images/delete32.png">
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
 						<div class="card-body">
 							<p class="card-text">
 								<%=object.getPrioridade()%>
@@ -88,9 +96,20 @@
 				%> 
 				<% if(object.getStatus().equals("Doing")){ %>
 					<div class="card mt-3">
-						<h5 class="card-header">
-							<%=object.getTitulo()%>
-						</h5>
+						<div class="card-header">
+							<div class="row">
+								<div class="col-6">
+									<h5><%=object.getTitulo()%></h5>
+								</div>
+								<div class="col-6 ">
+									<div class="float-right">
+										<a href="/taskByTask/Deletions?deleteID=<%=object.getIdTask()%>">
+											<img alt="delete" src="images/delete32.png">
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
 						<div class="card-body">
 							<p class="card-text">
 								<%=object.getPrioridade()%>
@@ -122,9 +141,20 @@
 				%> 
 				<% if(object.getStatus().equals("Done")){ %>
 					<div class="card mt-3">
-						<h5 class="card-header">
-							<%=object.getTitulo()%>
-						</h5>
+						<div class="card-header">
+							<div class="row">
+								<div class="col-6">
+									<h5><%=object.getTitulo()%></h5>
+								</div>
+								<div class="col-6 ">
+									<div class="float-right">
+										<a href="/taskByTask/Deletions?deleteID=<%=object.getIdTask()%>">
+											<img alt="delete" src="images/delete32.png">
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
 						<div class="card-body">
 							<p class="card-text">
 								<%=object.getPrioridade()%>
