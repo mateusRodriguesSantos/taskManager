@@ -33,7 +33,7 @@
       	</div>
       </div>
     </div>
-    <div class="container-fluid ">
+    <div class="container-fluid " style="background-color: #F8F9F9;">
   	  <div class="row">
 		<div class="col-4">
 			<h1 style="text-align:center">To Do</h1>

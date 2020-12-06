@@ -24,13 +24,13 @@
       	</div>
       </div>
     </div>
-    <div class="container-fluid">
+    <div class="container-fluid" >
       <div class="row justify-content-center">
 	      <a href="/taskByTask" class="btn btn-primary">Voltar</a>
       </div>
     </div>
-    <div class="row justify-content-center mt-3">
-      <div class="col-6" style="background-color: aliceblue; border-radius: 10px;">
+    <div class="row justify-content-center mt-3" style="background-color: #F8F9F9;">
+      <div class="col-6">
         <form action="ManagerTask" method="post">
         <div class="form-group" >
             <label for="titulo">Titulo</label>
