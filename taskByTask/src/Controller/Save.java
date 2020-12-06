@@ -68,7 +68,12 @@ public class Save extends HttpServlet {
 			ChecklistDAO cDAO = new ChecklistDAO();
 			cDAO.dropChecks(idTaskParse);
 			
-			
+			if(list.length != 0) {
+				for (String name : list) {
+					Check c = new  Check(name, idTaskParse);
+					cDAO.insertCheck(c, idTaskParse);
+				}
+			}
 			
 			request.getRequestDispatcher("/index.jsp").forward(request, response);
 		} catch (ParseException | SQLException e) {

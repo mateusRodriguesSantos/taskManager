@@ -26,7 +26,7 @@ public class ChecklistDAO {
         java.sql.Connection session = con.getConexaoMySQL();
 
         // SQL
-        String sql = "INSERT INTO Task (name,Task_idTask) VALUES (?, ?)";
+        String sql = "INSERT INTO ItemChecklist (name,Task_idTask) VALUES (?, ?)";
         PreparedStatement statement = session.prepareStatement(sql);
 
         // Insert attributes
