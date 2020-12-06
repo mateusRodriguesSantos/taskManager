@@ -111,10 +111,43 @@ public class ChecklistDAO {
 
         return lista;
     }
+    
+    // Read Check
+    /**
+     * This method drop all check of a Task
+     * 
+     * @return TaskBean object
+     * @throws SQLException
+     */
+    public void dropChecks(int idTask) throws SQLException {
+    	Check c = null;
+        // Create connection
+        Connect con = new Connect();
+        java.sql.Connection session = con.getConexaoMySQL();
+        
+        ArrayList<Check> lista = new ArrayList<Check>();
+
+        String sql = "SELECT * FROM ItemChecklist WHERE Task_idTask = ?";
+
+        
+        PreparedStatement statement = session.prepareStatement(sql);
+
+        // Insert attributes
+        statement.setString(1,""+idTask);
+        ResultSet result = statement.executeQuery();
+
+        
+        while (result.next()) {
+        	dropCheck(result.getInt(1));
+        }
+
+        con.FecharConexao();
+
+    }
 
     // Drop Check
     /**
-     * This method drop an Task in data base
+     * This method drop an Check in data base
      * 
      * @return boolean that indicates status of the operation - true or false 
      * @throws SQLException

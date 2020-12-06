@@ -24,11 +24,17 @@
         <div class="row justify-content-center" >
             <div class="col-md-8 ">
                 <div class="mb-5">
-                    <a href="" class="btn btn-primary" >Editar</a>
+                    <a href="/taskByTask/Edit?idTask=${Task.idTask}" class="btn btn-primary" >Editar</a>
                 </div>
             </div>
             <div class="col-md-8" >
                 <h3><c:out value="${Task.titulo}"/></h3>
+            </div>
+            <div class="col-md-8 mt-5">
+                <h5>Status</h5>
+                <p>
+                  	<c:out value="${Task.status}"/>
+                 </p>
             </div>
             <div class="col-md-8 mt-5">
                 <h5>Description</h5>

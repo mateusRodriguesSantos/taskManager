@@ -145,8 +145,12 @@ public class TaskDAO {
         statement.setString(1,newTask.getTitulo());
         statement.setString(2,newTask.getStatus());
         statement.setString(3,""+newTask.getPrioridade());
-        statement.setString(4,""+newTask.getDescricao());
-        statement.setString(5,""+newTask.getLimite());
+        statement.setString(4,""+newTask.getDescricao()); 
+        
+        java.sql.Date sqlDate = new java.sql.Date(newTask.getLimite().getTime());
+        
+        statement.setDate(5, sqlDate);
+        
         statement.setString(6,""+idTask);
 
         int rowsUpdated = statement.executeUpdate();

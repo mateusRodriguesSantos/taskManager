@@ -36,28 +36,25 @@ public class View extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		try {
-		String id = request.getParameter("viewID");
-		int idParse = Integer.parseInt(id);
+			String id = request.getParameter("viewID");
+			int idParse = Integer.parseInt(id);
+			
+			
+			TaskDAO tDAO = new TaskDAO();
 		
-		
-		TaskDAO tDAO = new TaskDAO();
-	
-		Task t = tDAO.readTask(idParse);
-		
-		CheckBO cBO = new CheckBO();
-		ArrayList<Check> listCheck = cBO.readCheck(t.getIdTask());
-		
-		request.setAttribute("Task", t);
-		request.setAttribute("listCheck", listCheck);
-		
-		request.getRequestDispatcher("/view.jsp").forward(request, response);
+			Task t = tDAO.readTask(idParse);
+			
+			CheckBO cBO = new CheckBO();
+			ArrayList<Check> listCheck = cBO.readCheck(t.getIdTask());
+			
+			request.setAttribute("Task", t);
+			request.setAttribute("listCheck", listCheck);
+			
+			request.getRequestDispatcher("/view.jsp").forward(request, response);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
-		
-		
-        
+		} 
 	}
 
 
