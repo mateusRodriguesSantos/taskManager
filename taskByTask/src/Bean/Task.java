@@ -20,6 +20,7 @@ public class Task {
     private int prioridade;
     private String descricao;
     private Date limite;
+    private String title;
 
     public Task(){
         
@@ -28,24 +29,26 @@ public class Task {
     /**
      * Constructor of Task Class
      */
-    public Task(int idTask, String titulo, String status, int prioridade, String descricao,Date limite) {
+    public Task(int idTask, String titulo, String status, int prioridade, String descricao,Date limite,String title) {
         this.idTask = idTask;
         this.titulo = titulo;
         this.status = status;
         this.prioridade = prioridade;
         this.descricao = descricao;
         this.limite = limite;
+        this.title = title;
     }
 
     /**
      * Constructor of Task Class
      */
-    public Task(String titulo, String status, int prioridade, String descricao,Date limite) {
+    public Task(String titulo, String status, int prioridade, String descricao,Date limite,String title) {
         this.titulo = titulo;
         this.status = status;
         this.prioridade = prioridade;
         this.descricao = descricao;
         this.limite = limite;
+        this.title = title;
     }
 
     public Date getLimite() {
@@ -96,6 +99,14 @@ public class Task {
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
 
     
 }

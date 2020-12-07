@@ -35,8 +35,8 @@
 						<div class="form-group">
 							<input type="hidden" name="idTask" value="${Task.idTask}" /> <input
 								class="form-control" type="text" name="title"
-								value="<c:out value="${Task.titulo}"/>"> <small
-								class="text-muted">Edite o Titulo, acima</small>
+								value="<c:out value="${Task.titulo}"/>"> 
+								<small class="text-muted">Edite o Titulo, acima</small>
 						</div>
 					</div>
 					<div class="mt-5">

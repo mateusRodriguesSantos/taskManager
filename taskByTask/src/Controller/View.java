@@ -36,6 +36,8 @@ public class View extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		try {
+			String title = request.getParameter("title");
+			
 			String id = request.getParameter("viewID");
 			int idParse = Integer.parseInt(id);
 			
@@ -49,6 +51,7 @@ public class View extends HttpServlet {
 			
 			request.setAttribute("Task", t);
 			request.setAttribute("listCheck", listCheck);
+			request.setAttribute("title", title);
 			
 			request.getRequestDispatcher("/view.jsp").forward(request, response);
 		} catch (SQLException e) {

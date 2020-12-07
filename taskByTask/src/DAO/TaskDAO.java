@@ -38,7 +38,7 @@ public class TaskDAO {
         java.sql.Connection session = con.getConexaoMySQL();
 
         // SQL
-        String sql = "INSERT INTO Task (titulo,status,prioridade,descricao,limite) VALUES (?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO Task (titulo,status,prioridade,descricao,limite,title) VALUES (?, ?, ?, ?, ?, ?)";
         PreparedStatement statement = session.prepareStatement(sql);
 
         // Insert attributes
@@ -47,9 +47,12 @@ public class TaskDAO {
         statement.setString(3, "" + newTask.getPrioridade());
         statement.setString(4, newTask.getDescricao());
         
+        
         java.sql.Date sqlDate = new java.sql.Date(newTask.getLimite().getTime());
         
         statement.setDate(5, sqlDate);
+        
+        statement.setString(6, newTask.getTitle());
 
         // Execute SQL
         int rowsInserted = statement.executeUpdate();
@@ -84,7 +87,7 @@ public class TaskDAO {
         int count = 0;
 
         while (result.next()) {
-            Task Task = new Task(result.getInt(1), result.getString(2), result.getString(3), result.getInt(4), result.getString(5), result.getDate(6));
+            Task Task = new Task(result.getInt(1), result.getString(2), result.getString(3), result.getInt(4), result.getString(5), result.getDate(6),result.getString(7));
             lista.add(Task);
             count = count + 1;
         }
@@ -116,7 +119,7 @@ public class TaskDAO {
         ResultSet result = statement.executeQuery();
 
         while (result.next()) {
-            Task = new Task(result.getInt(1), result.getString(2), result.getString(3), result.getInt(4), result.getString(5), result.getDate(6));
+            Task = new Task(result.getInt(1), result.getString(2), result.getString(3), result.getInt(4), result.getString(5), result.getDate(6),result.getString(7));
         }
 
         con.FecharConexao();

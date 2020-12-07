@@ -14,10 +14,10 @@
     <link href="css/style.css" rel="stylesheet">
 
   </head>
-    <body>
-    <div class="container-fluid">
+    <body style="background-color: #F8F9F9;">
+    <div class="container-fluid" style="background-color: white;">
       <div class="row">
-      	<div class="col-12">
+      	<div class="col-12" >
 	      	<h3 class="text-center">
 	          Task by Task
 	        </h3>
@@ -25,12 +25,12 @@
       </div>
     </div>
     <div class="container-fluid" >
-      <div class="row justify-content-center">
-	      <a href="/taskByTask" class="btn btn-primary">Voltar</a>
+      <div class="row mt-5 ml-5">
+	      <a href="/taskByTask/title?title=<c:out value="${title}"></c:out>" class="btn btn-primary" style="color:black; border-color:black; background-color: white;">Back</a>
       </div>
     </div>
-    <div class="row justify-content-center mt-3" style="background-color: #F8F9F9;">
-      <div class="col-6">
+    <div class="row justify-content-center mt-3" >
+      <div class="col-6" style="background-color: white;">
         <form action="ManagerTask" method="post">
         <div class="form-group" >
             <label for="titulo">Titulo</label>
@@ -58,6 +58,7 @@
           <input type="date" class="form-control" name="limite" id="limite" required>
         </div>
         <div class="row justify-content-center form-group">
+          <input type="hidden" name="title" value="<c:out value="${title}"></c:out>">
           <input type="submit" value="Enviar" class="btn btn-primary">
         </div>
       </form>

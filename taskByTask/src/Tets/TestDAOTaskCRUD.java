@@ -17,7 +17,7 @@ class TestDAOTaskCRUD {
 	@Test
 	void testInsert() throws SQLException {
 	
-		Task t = new Task("Fazer um crochê", "Done", 3, "Usar a agulha que o Isnard me deu", new Date());
+		Task t = new Task("Fazer um crochê", "Done", 3, "Usar a agulha que o Isnard me deu", new Date(),"Arroz");
 		
 		TaskDAO tDao = new TaskDAO();
 		

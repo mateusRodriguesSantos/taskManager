@@ -58,7 +58,7 @@ public class Save extends HttpServlet {
 		
 			dateParse = formatter.parse(date);
 			
-			Task t = new Task(title, status, priorityParse, description, dateParse);
+			Task t = new Task(title, status, priorityParse, description, dateParse,"title");
 			
 			//Persistence
 			
@@ -75,7 +75,8 @@ public class Save extends HttpServlet {
 				}
 			}
 			
-			request.getRequestDispatcher("/index.jsp").forward(request, response);
+			request.setAttribute("title", title);
+			request.getRequestDispatcher("/tasks.jsp").forward(request, response);
 		} catch (ParseException | SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

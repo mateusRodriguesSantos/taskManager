@@ -38,7 +38,9 @@ public class ManagerTask extends HttpServlet {
 	
 		
 		String action = request.getParameter("action");
+		String title = request.getParameter("title");
 		request.setAttribute("action", action);
+		request.setAttribute("title", title);
 		
         request.getRequestDispatcher("/managerTask.jsp").forward(request, response);
 	}
@@ -55,6 +57,7 @@ public class ManagerTask extends HttpServlet {
         String prioridade = request.getParameter("prioridade");
         String status = request.getParameter("status");
         String limite = request.getParameter("limite");
+        String title = request.getParameter("title");
         
       
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd"); 
@@ -62,13 +65,15 @@ public class ManagerTask extends HttpServlet {
 		
 		dateParse = formatter.parse(limite);
         
-        Task t = new Task(titulo, status, Integer.parseInt(prioridade), descricao, dateParse);
+        Task t = new Task(titulo, status, Integer.parseInt(prioridade), descricao, dateParse,title);
 		
         TaskDAO tDAO = new TaskDAO();
    
 		tDAO.insertTask(t);
 		
-		request.getRequestDispatcher("/index.jsp").forward(request, response);
+		request.setAttribute("title", title);
+		
+		request.getRequestDispatcher("/tasks.jsp").forward(request, response);
         
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block

@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import DAO.ChecklistDAO;
 import DAO.TaskDAO;
 
 /**
@@ -33,14 +34,19 @@ public class Deletions extends HttpServlet {
 		// TODO Auto-generated method stub
 		try {
 		String id = request.getParameter("deleteID");
+		String title = request.getParameter("title");
 		int parseId = Integer.parseInt(id);
 		
 		TaskDAO tDAO = new TaskDAO();
 		   
+		ChecklistDAO cDAO = new ChecklistDAO();
+		cDAO.dropChecks(parseId);
 		
 		tDAO.dropTask(parseId);
+		
+		request.setAttribute("title", title);
 			
-		request.getRequestDispatcher("/index.jsp").forward(request, response);
+		request.getRequestDispatcher("/tasks.jsp").forward(request, response);
 		
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

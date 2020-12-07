@@ -11,20 +11,26 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 </head>
-<body>
+<body style="background-color: #F8F9F9;">
     
-    <div class="container-fluid">
+    <div class="container-fluid"  style="background-color: white;">
         <div class="row">
             <div class="col">
                 <h3 style="text-align: center;">Task By Task</h3>
             </div>
         </div>
     </div>
-    <div class="container-fluid mt p-3" style=" background-color: #F8F9F9;">
+    <div class="container-fluid" >
+      <div class="row mt-5 ml-5">
+	      <a href="/taskByTask/title?title=<c:out value="${title}"></c:out>" class="btn btn-primary" style="color:black; border-color:black; background-color: white;">Back</a>
+      </div>
+    </div>
+    <div class="container-fluid mt p-3">
         <div class="row justify-content-center" >
+        	
             <div class="col-md-8 ">
                 <div class="mb-5">
-                    <a href="/taskByTask/Edit?idTask=${Task.idTask}" class="btn btn-primary" >Editar</a>
+                    <a href="/taskByTask/Edit?idTask=${Task.idTask}&title=<c:out value="${title}"></c:out>" class="btn btn-primary" >Editar</a>
                 </div>
             </div>
             <div class="col-md-8" >
