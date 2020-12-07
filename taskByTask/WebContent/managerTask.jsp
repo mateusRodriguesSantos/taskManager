@@ -30,7 +30,7 @@
       </div>
     </div>
     <div class="row justify-content-center mt-3" >
-      <div class="col-6" style="background-color: white;">
+      <div class="col-6">
         <form action="ManagerTask" method="post">
         <div class="form-group" >
             <label for="titulo">Titulo</label>

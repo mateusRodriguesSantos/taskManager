@@ -45,6 +45,8 @@ public class Save extends HttpServlet {
 			String date = request.getParameter("date");
 			String status = request.getParameter("status");
 			String priority = request.getParameter("priority");
+			
+			
 			String[] list = request.getParameterValues("list");
 			
 			//Parses
@@ -68,7 +70,7 @@ public class Save extends HttpServlet {
 			ChecklistDAO cDAO = new ChecklistDAO();
 			cDAO.dropChecks(idTaskParse);
 			
-			if(list.length != 0) {
+			if(list != null) {
 				for (String name : list) {
 					Check c = new  Check(name, idTaskParse);
 					cDAO.insertCheck(c, idTaskParse);
